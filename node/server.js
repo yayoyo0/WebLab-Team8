@@ -4,6 +4,32 @@ var express  = require("express"),
     server   = http.createServer(app),
     mongoose = require('mongoose'); 
 
+var db = mongoose.connection;
+var Client;
+db.on('error', console.error);
+db.once('open', function() {
+  // Mongoose Schema definition
+  var Schema = mongoose.Schema;
+  var clientSchema = new Schema({
+    name    :  { type: String },
+    address :  { type: String },
+    phone   :  { type: Number },
+    email   :  { type: String },
+    coches  :  { type: String }
+    }, {collection: 'clientes'});
+
+  // Mongoose Model definition
+  Client = mongoose.model('client', clientSchema);
+});
+
+mongoose.connect('mongodb://localhost/carfix', function(err, res) {
+  if(err) {
+    console.log('ERROR: connecting to Database. ' + err);
+  } else {
+    console.log('Connected to Database ' + res);
+  }
+});
+
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
@@ -26,16 +52,12 @@ app.configure(function () {
 });
 
 app.get('/', function(req, res,next) {
-  res.send("Hello world");
+  Client.find({}, function (err, data) {
+    console.log(data);
+        res.json(data);
+    });
 });
 
-mongoose.connect('mongodb://localhost/carfix', function(err, res) {
-  if(err) {
-    console.log('ERROR: connecting to Database. ' + err);
-  } else {
-    console.log('Connected to Database');
-  }
-});
 
 server.listen(3000, function() {
   console.log("Node server running on http://localhost:3000");

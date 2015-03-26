@@ -5,6 +5,6 @@ angular.module('carfix', [])
 		$scope.clientes = data;
 	  })
 	  .error(function(data, status, headers, config) {
-	
+	  	$scope.clientes = data;
 	  });
 });
