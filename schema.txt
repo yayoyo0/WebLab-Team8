@@ -1,0 +1,49 @@
+{
+      "name": "Panchito Perez", 
+      "address": "Calle patata #000001", 
+      "phone": 11111111, 
+      "email":"panchito@perez.com",
+       "cars": 
+      [
+        {
+          "brand": "Konigsegg",
+          "model": "One:1",
+          "year": 2014,
+          "kilometers":"000,001",
+          "plates":"JIU9988",
+          "sn": "456dfa465f4gevfvs84vd6",
+          "color":"Negro",
+          "services":
+          [
+            {
+              "service":"Initial review",
+              "date":"2014-01-01"
+            }
+          ]
+        },
+        {
+          "brand": "Aston Martin",
+          "model": "Vanquish",
+          "year": 2013,
+          "kilometers":"000,099",
+          "plates":"JIU9987",
+          "sn": "fdssdf6546546",
+          "color":"Blanco",
+          "services":
+          [
+            {
+              "service":"Cambio de motor",
+              "cost":"50,000",
+              "mechanic":"Juan Bananas",
+              "date":"2015-12-30"
+            },
+            {
+              "service":"Revisión de frenos",
+              "cost":"1,000",
+              "mechanic":"Juan Bananas",
+              "date":"2015-12-30"
+            }
+          ]
+        }
+      ]
+}

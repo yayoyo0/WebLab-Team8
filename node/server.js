@@ -1,9 +1,10 @@
-var express  = require("express"),
-    app      = express(),
-    http     = require("http"),
-    server   = http.createServer(app),
-    mongoose = require('mongoose'); 
+/** dependencies **/
+var express    = require('express'),
+    bodyParser = require('body-parser'),
+    app        = express(),
+    mongoose   = require('mongoose');;
 
+/** instances **/
 var db = mongoose.connection;
 var Client;
 db.on('error', console.error);
@@ -11,54 +12,37 @@ db.once('open', function() {
   // Mongoose Schema definition
   var Schema = mongoose.Schema;
   var clientSchema = new Schema({
-    name    :  { type: String },
-    address :  { type: String },
-    phone   :  { type: Number },
-    email   :  { type: String },
-    coches  :  { type: String }
-    }, {collection: 'clientes'});
+    }, {collection: 'customers'});
 
   // Mongoose Model definition
   Client = mongoose.model('client', clientSchema);
 });
-
-mongoose.connect('mongodb://localhost/carfix', function(err, res) {
+//mongodb://localhost/carfix
+mongoose.connect('mongodb://test:test@ds055689.mongolab.com:55689/carfix', function(err, res) {
   if(err) {
     console.log('ERROR: connecting to Database. ' + err);
   } else {
-    console.log('Connected to Database ' + res);
+    console.log('Connected to Database ');
   }
 });
 
-var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+var router = express.Router();
 
-    // intercept OPTIONS method
-    if ('OPTIONS' == req.method) {
-      res.send(200);
-    }
-    else {
-      next();
-    }
-};
+router
+    .use(bodyParser.json())
+    .route('/')
+        .get(function (req, res) {
+         
+        });
 
-app.configure(function () {
-  app.use(allowCrossDomain);
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(app.router);
+module.exports = router;
+
+app.get('/', function (req, res, next) {
+          Client.find({}, function (err, data) {
+            res.json(data);
+          });
 });
 
-app.get('/', function(req, res,next) {
-  Client.find({}, function (err, data) {
-    console.log(data);
-        res.json(data);
-    });
-});
-
-
-server.listen(3000, function() {
-  console.log("Node server running on http://localhost:3000");
+app.listen(3000, function() {
+  console.log("Node server running on port: 3000");
 });

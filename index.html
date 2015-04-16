@@ -3,14 +3,91 @@
 	<head>
 		<title>CarFix</title>
 		<link rel="shortcut icon" href="img/icon.png" />
+		<link href="css/bootstrap.css" rel="stylesheet" />
 		<script src="js/angular.js"></script>
     	<script src="js/app.js"></script>
+		<link rel="stylesheet" href="css/jquery-ui.css">
+		<script src="js/jquery-1.11.2.js"></script>
+		<script src="js/jquery-ui.js"></script>
+		<script>
+		  $(function() {
+		    $( "#accordion" ).accordion();
+		  });
+	  	</script>
 	</head>
-
 	<body ng-controller="getData">
-		<div>
-			<h3>Clientes:</h3>
-			{{clientes}}
-		</div>
+		
+	    <div class="container">
+	      	<div class="row">
+				<h1>Directory:</h1>
+				<div ng-repeat="cliente in clientes" class="col-lg-12">
+					<h2>{{cliente.name}}</h2>
+						<table>
+							<tr>
+								<td>
+									<b>Address: </b>
+								</td>
+								<td>
+									{{cliente.address}}
+								</td>
+							<tr>
+								<td>
+									<b>Telephone: </b>
+								</td>
+								<td>
+									{{cliente.phone}}
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<b>Email: </b>
+								</td>
+								<td>
+									{{cliente.email}}
+								</td>
+							</tr>
+						</table>
+						<div id = "accordion" ng-repeat= "car in cliente.cars">
+							<h3>{{car.brand}}</h3>
+							<div>
+								<table>
+									<tr>
+										<td>
+											<b>Model:</b>
+										</td>
+										<td>
+											{{car.model}}
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<b>Year:</b>
+										</td>
+										<td>
+											{{car.year}}
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<b>Color:</b>
+										</td>
+										<td>
+											{{car.color}}
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<b>Plates:</b>
+										</td>
+										<td>
+											{{car.plates}}
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+				</div>
+    		</div>
+    	</div>
 	</body>
 </html>
