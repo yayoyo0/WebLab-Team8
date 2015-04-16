@@ -18,7 +18,7 @@ db.once('open', function() {
   Client = mongoose.model('client', clientSchema);
 });
 //mongodb://localhost/carfix
-mongoose.connect('mongodb://test:test@ds055689.mongolab.com:55689/carfix', function(err, res) {
+mongoose.connect('mongodb://localhost/carfix', function(err, res) {
   if(err) {
     console.log('ERROR: connecting to Database. ' + err);
   } else {
@@ -26,16 +26,6 @@ mongoose.connect('mongodb://test:test@ds055689.mongolab.com:55689/carfix', funct
   }
 });
 
-var router = express.Router();
-
-router
-    .use(bodyParser.json())
-    .route('/')
-        .get(function (req, res) {
-         
-        });
-
-module.exports = router;
 
 app.get('/', function (req, res, next) {
           Client.find({}, function (err, data) {

@@ -3,91 +3,137 @@
 	<head>
 		<title>CarFix</title>
 		<link rel="shortcut icon" href="img/icon.png" />
-		<link href="css/bootstrap.css" rel="stylesheet" />
 		<script src="js/angular.js"></script>
     	<script src="js/app.js"></script>
-		<link rel="stylesheet" href="css/jquery-ui.css">
-		<script src="js/jquery-1.11.2.js"></script>
-		<script src="js/jquery-ui.js"></script>
-		<script>
-		  $(function() {
-		    $( "#accordion" ).accordion();
-		  });
-	  	</script>
+    	<script src="js/jquery.js"></script>
+      	<script src="js/bootstrap.min.js"></script>
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/logo-nav.css" rel="stylesheet">
+      <link href="css/half-slider.css" rel="stylesheet">
 	</head>
+
 	<body ng-controller="getData">
-		
-	    <div class="container">
-	      	<div class="row">
-				<h1>Directory:</h1>
-				<div ng-repeat="cliente in clientes" class="col-lg-12">
-					<h2>{{cliente.name}}</h2>
-						<table>
-							<tr>
-								<td>
-									<b>Address: </b>
-								</td>
-								<td>
-									{{cliente.address}}
-								</td>
-							<tr>
-								<td>
-									<b>Telephone: </b>
-								</td>
-								<td>
-									{{cliente.phone}}
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<b>Email: </b>
-								</td>
-								<td>
-									{{cliente.email}}
-								</td>
-							</tr>
-						</table>
-						<div id = "accordion" ng-repeat= "car in cliente.cars">
-							<h3>{{car.brand}}</h3>
-							<div>
-								<table>
-									<tr>
-										<td>
-											<b>Model:</b>
-										</td>
-										<td>
-											{{car.model}}
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<b>Year:</b>
-										</td>
-										<td>
-											{{car.year}}
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<b>Color:</b>
-										</td>
-										<td>
-											{{car.color}}
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<b>Plates:</b>
-										</td>
-										<td>
-											{{car.plates}}
-										</td>
-									</tr>
-								</table>
-							</div>
-						</div>
+		<!-- Navigation -->
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header" >
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">
+						<img src="http://placehold.it/50x50">
+					</a>
 				</div>
-    		</div>
-    	</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" width="50" height="50" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Clientes</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bienvenido, Usuario <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">Informaci&oacute;n de la cuenta</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Salir</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div> <!-- /.navbar-collapse -->
+			</div> <!-- /.container -->
+		</nav>
+
+		<!-- Half Page Image Background Carousel Header -->
+    <header id="myCarousel" class="carousel slide">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+
+			<!-- Wrapper for Slides -->
+			<div class="carousel-inner">
+				<div class="item active">
+					<!-- Set the first background image using inline CSS below. -->
+					<div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Promocion 1');"></div>
+				</div>
+				<div class="item">
+					<!-- Set the second background image using inline CSS below. -->
+					<div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Promocion 2');"></div>
+				</div>
+				<div class="item">
+					<!-- Set the third background image using inline CSS below. -->
+					<div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Promocion 3');"></div>
+				</div>
+			</div>
+
+			<!-- Controls -->
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="icon-prev"></span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next">
+				<span class="icon-next"></span>
+			</a>
+    </header>
+
+		<div class="container" ng-app="sortApp">
+
+			<div class="row" style="margin-top:25px;">
+				<form class="form-search">
+					<input type="text" class="input-medium search-query">
+					<button type="submit" class="btn">Buscar cliente</button>
+				</form>
+
+				<table class="table table-bordered table-striped" style="margin-top:10px;">
+			    <thead>
+			      <tr>
+			        <td>
+			          <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+			            Nombre
+			            <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+			            <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+			          </a>
+			        </td>
+			        <td>
+			          <a href="#" ng-click="sortType = 'address'; sortReverse = !sortReverse">
+			          Direcci&oacute;n
+			            <span ng-show="sortType == 'address' && !sortReverse" class="fa fa-caret-down"></span>
+			            <span ng-show="sortType == 'address' && sortReverse" class="fa fa-caret-up"></span>
+			          </a>
+			        </td>
+			        <td>
+			          <a href="#" ng-click="sortType = 'phone'; sortReverse = !sortReverse">
+			          Telefono
+			            <span ng-show="sortType == 'phone' && !sortReverse" class="fa fa-caret-down"></span>
+			            <span ng-show="sortType == 'phone' && sortReverse" class="fa fa-caret-up"></span>
+			          </a>
+			        </td>
+			          <td>
+			          <a href="#" ng-click="sortType = 'mail'; sortReverse = !sortReverse">
+			          Email
+			            <span ng-show="sortType == 'mail' && !sortReverse" class="fa fa-caret-down"></span>
+			            <span ng-show="sortType == 'mail' && sortReverse" class="fa fa-caret-up"></span>
+			          </a>
+			        </td>
+			      </tr>
+			    </thead>
+
+			    <tbody>
+			      <tr ng-repeat="cliente in clientes">
+			        <td>{{cliente.name}}</td>
+			        <td>{{cliente.address}}</td>
+			        <td>{{cliente.phone}}</td>
+			        <td>{{cliente.email}}</td>
+			      </tr>
+			    </tbody>
+
+	  		</table>
+	  	</div>
+	</div>
 	</body>
 </html>
