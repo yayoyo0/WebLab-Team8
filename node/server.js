@@ -2,7 +2,7 @@
 var express    = require('express'),
     bodyParser = require('body-parser'),
     app        = express(),
-    mongoose   = require('mongoose');;
+    mongoose   = require('mongoose');
 
 /** instances **/
 var db = mongoose.connection;
@@ -12,13 +12,13 @@ db.once('open', function() {
   // Mongoose Schema definition
   var Schema = mongoose.Schema;
   var clientSchema = new Schema({
-    }, {collection: 'customers'});
+    }, {collection: 'clients'});
 
   // Mongoose Model definition
   Client = mongoose.model('client', clientSchema);
 });
 //mongodb://localhost/carfix
-mongoose.connect('mongodb://localhost/carfix', function(err, res) {
+mongoose.connect('mongodb://test:test@ds055689.mongolab.com:55689/carfix', function(err, res) {
   if(err) {
     console.log('ERROR: connecting to Database. ' + err);
   } else {
@@ -26,8 +26,7 @@ mongoose.connect('mongodb://localhost/carfix', function(err, res) {
   }
 });
 
-
-app.get('/', function (req, res, next) {
+app.get('/clients', function (req, res, next) {
           Client.find({}, function (err, data) {
             res.json(data);
           });

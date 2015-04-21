@@ -1,6 +1,6 @@
 angular.module('carfix', [])
 .controller('getData', function ($scope, $http) {
-	$http.get('http://127.0.0.1:3000/')
+	$http.get('http://localhost/clients')
 	.success(function(data, status, headers, config) {
 		$scope.clientes = data;
 	  })
