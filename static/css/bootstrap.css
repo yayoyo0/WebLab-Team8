@@ -35,6 +35,13 @@ video {
   display: inline-block;
   vertical-align: baseline;
 }
+#rcorners1 {
+    border-radius: 25px;
+    background: #FFFFFF;
+    padding: 30px;
+    padding-top: -1cm;
+}
+
 audio:not([controls]) {
   display: none;
   height: 0;

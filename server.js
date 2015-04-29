@@ -10,6 +10,7 @@ var config      = cc(),
 app.use(restify.queryParser())
 app.use(restify.CORS())
 app.use(restify.fullResponse())
+app.use(restify.bodyParser())
 
 var db = mongojs('mongodb://test:test@ds055689.mongolab.com:55689/carfix', ['clients']);
 
@@ -20,11 +21,11 @@ app.get('/status', function (req, res, next)
 });
 
 app.get("/clients", function (req, res, next) {
-    db.clients.find(function (err, clients) {
+    db.clients.find(function (err, data) {
         res.writeHead(200, {
             'Content-Type': 'application/json; charset=utf-8'
         });
-        res.end(JSON.stringify(clients));
+        res.end(JSON.stringify(data));
     });
     return next();
 });
@@ -42,12 +43,10 @@ app.get('/clients/:name', function (req, res, next) {
 });
 
 app.post('/clients', function (req, res, next) {
-    var client = req.params;
+	var client = req.params;
     db.clients.save(client,
         function (err, data) {
-            res.writeHead(200, {
-                'Content-Type': 'application/json; charset=utf-8'
-            });
+            res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
             res.end(JSON.stringify(data));
         });
     return next();
@@ -63,6 +62,46 @@ app.del('/clients/:name', function (req, res, next) {
         res.end(JSON.stringify(true));
     });
     return next();
+});
+
+
+app.put('/clients/:name', function (req, res, next) {
+    db.clients.findOne({
+        name: req.params.name
+    }, function (err, data) { 
+        var client = {};
+        for (var n in data) {
+            client[n] = data[n];
+        }
+        for (var n in req.params) {
+            client[n] = req.params[n];
+        }
+        db.clients.update({
+            name: req.params.name
+        }, client, {
+            multi: false
+        }, function (err, data) {
+            res.writeHead(200, {
+                'Content-Type': 'application/json; charset=utf-8'
+            });
+            res.end(JSON.stringify(data));
+        });
+    });
+    return next();
+})
+
+
+
+app.put('/clients/:name', function (req, res, next) {
+  var client = clients[req.params.name];
+  var changes = req.params;
+  delete changes.name;
+  for(var x in changes) {
+    client[x] = changes[x];
+  }
+  res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
+  res.end(JSON.stringify(client));
+  return next();
 });
 
 app.get('/', function (req, res, next)

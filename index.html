@@ -1,18 +1,26 @@
-<!doctype html>
+<!doctype html lang="en">
 <html ng-app = "carfix">
 	<head>
 		<title>CarFix</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="CarFix main webpage">
+		<meta name="keywords" content="Cars, mechanical, workshop">
+		<meta name="author" content="yayohack@gmail.com">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
 		<link rel="shortcut icon" href="img/icon.png" />
-		<script src="./js/angular.js"></script>
-    	<script src="./js/app.js"></script>
-    	<script src="./js/jquery.js"></script>
-      	<script src="./js/bootstrap.min.js"></script>
-      <link href="css/bootstrap.min.css" rel="stylesheet">
-      <link href="css/logo-nav.css" rel="stylesheet">
-      <link href="css/half-slider.css" rel="stylesheet">
+		<script src="js/angular.js"></script>
+    	<script src="js/app.js"></script>
+    	<script src="js/jquery-1.11.2.js"></script>
+      	<script src="js/bootstrap.js"></script>
+      	<link href="css/bootstrap.css" rel="stylesheet">
+      	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      	<link href="css/logo-nav.css" rel="stylesheet">
+      	<link href="css/half-slider.css" rel="stylesheet">
+      	<link href="css/custom.css" rel="stylesheet">
 	</head>
 
-	<body ng-controller="getData">
+	<body ng-controller="getData" background="img/bg.png">
 		<!-- Navigation -->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<div class="container">
@@ -25,21 +33,21 @@
 						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="#">
-						<img src="http://placehold.it/50x50">
+						<img class="img-responsive" src="http://placehold.it/50x50">
 					</a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" width="50" height="50" id="bs-example-navbar-collapse-1">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="#">Clientes</a></li>
+						<li><a href="#">Clients</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bienvenido, Usuario <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome, User <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Informaci&oacute;n de la cuenta</a></li>
+								<li><a href="#">Account information</a></li>
 								<li class="divider"></li>
-								<li><a href="#">Salir</a></li>
+								<li><a href="#">Log out</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -49,18 +57,11 @@
 
 		<!-- Half Page Image Background Carousel Header -->
     <header id="myCarousel" class="carousel slide">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>
-
 			<!-- Wrapper for Slides -->
 			<div class="carousel-inner">
 				<div class="item active">
 					<!-- Set the first background image using inline CSS below. -->
-					<div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Promocion 1');"></div>
+					<div class="fill" style="background-image:url('http://mecanicaonline.com.mx/images/Viperke2.jpg');"></div>
 				</div>
 				<div class="item">
 					<!-- Set the second background image using inline CSS below. -->
@@ -80,59 +81,99 @@
 				<span class="icon-next"></span>
 			</a>
     </header>
-
-		<div class="container" ng-app="sortApp">
-
+    <br>
+		<div class="container" id="rcorners1">
 			<div class="row" style="margin-top:25px;">
-				<form class="form-search">
-					<input type="text" class="input-medium search-query">
-					<button type="submit" class="btn">Buscar cliente</button>
-				</form>
+				<div class="col-lg-4">
+					<form>
+						<div class="form-group">
+				    		<div class="input-group">
+				        		<div class="input-group-addon"><i class="fa fa-search"></i></div>
+				        		<input type="text" class="form-control" placeholder="Search a client" ng-model="searchClient">
+				      		</div>      
+				    	</div>
+					</form>
+				</div>
+				
+			<div class="row">
+				<div class="col-lg-12">	
+					<table class="table table-bordered table-striped" style="margin-top:10px;" id="accordion">
+				    <thead>
+				      <tr>
+				        <td>
+				          <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+				            Name
+				            <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+				            <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+				          </a>
+				        </td>
+				        <td>
+				          <a href="#" ng-click="sortType = 'address'; sortReverse = !sortReverse">
+				          Address
+				            <span ng-show="sortType == 'address' && !sortReverse" class="fa fa-caret-down"></span>
+				            <span ng-show="sortType == 'address' && sortReverse" class="fa fa-caret-up"></span>
+				          </a>
+				        </td>
+				        <td>
+				          <a href="#" ng-click="sortType = 'phone'; sortReverse = !sortReverse">
+				          Phone
+				            <span ng-show="sortType == 'phone' && !sortReverse" class="fa fa-caret-down"></span>
+				            <span ng-show="sortType == 'phone' && sortReverse" class="fa fa-caret-up"></span>
+				          </a>
+				        </td>
+				          <td>
+				          <a href="#" ng-click="sortType = 'email'; sortReverse = !sortReverse">
+				          Email
+				            <span ng-show="sortType == 'email' && !sortReverse" class="fa fa-caret-down"></span>
+				            <span ng-show="sortType == 'email' && sortReverse" class="fa fa-caret-up"></span>
+				          </a>
+				        </td>
+				      </tr>
+				    </thead>
 
-				<table class="table table-bordered table-striped" style="margin-top:10px;">
-			    <thead>
-			      <tr>
-			        <td>
-			          <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
-			            Nombre
-			            <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
-			            <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
-			          </a>
-			        </td>
-			        <td>
-			          <a href="#" ng-click="sortType = 'address'; sortReverse = !sortReverse">
-			          Direcci&oacute;n
-			            <span ng-show="sortType == 'address' && !sortReverse" class="fa fa-caret-down"></span>
-			            <span ng-show="sortType == 'address' && sortReverse" class="fa fa-caret-up"></span>
-			          </a>
-			        </td>
-			        <td>
-			          <a href="#" ng-click="sortType = 'phone'; sortReverse = !sortReverse">
-			          Telefono
-			            <span ng-show="sortType == 'phone' && !sortReverse" class="fa fa-caret-down"></span>
-			            <span ng-show="sortType == 'phone' && sortReverse" class="fa fa-caret-up"></span>
-			          </a>
-			        </td>
-			          <td>
-			          <a href="#" ng-click="sortType = 'mail'; sortReverse = !sortReverse">
-			          Email
-			            <span ng-show="sortType == 'mail' && !sortReverse" class="fa fa-caret-down"></span>
-			            <span ng-show="sortType == 'mail' && sortReverse" class="fa fa-caret-up"></span>
-			          </a>
-			        </td>
-			      </tr>
-			    </thead>
+				    <tbody>
+				      <tr ng-repeat="cliente in clientes | orderBy:sortType:sortReverse | filter:searchClient">
+				        <td class="showName">{{cliente.name}} <button class="edit fa fa-pencil-square-o"> <button class="delete fa fa-trash-o" ng-click="delete(cliente.name)"></button></td>
+				        <td>{{cliente.address}}</td>
+				        <td>{{cliente.phone}}</td>
+				        <td>{{cliente.email}}</td>
+				      </tr>
+				    </tbody>
+		  		</table>
+		  		<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary btn-lg fa fa-plus-square fa-5x" data-toggle="modal" data-target="#myModal">
+				</button>
 
-			    <tbody>
-			      <tr ng-repeat="cliente in clientes">
-			        <td>{{cliente.name}}</td>
-			        <td>{{cliente.address}}</td>
-			        <td>{{cliente.phone}}</td>
-			        <td>{{cliente.email}}</td>
-			      </tr>
-			    </tbody>
-
-	  		</table>
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title" id="myModalLabel">Adding new client</h4>
+				      </div>
+				      <div class="modal-body">
+				      	<ul>
+		                    <li class="err" ng-repeat="error in errors"> {{ error}} </li>
+		                </ul>
+		                <ul>
+		                    <li class="info" ng-repeat="msg in msgs"> {{ msg}} </li>
+		                </ul>
+				      	<form>
+				       		<label for="id">Name:</label> <input type="text" id="name" name="name" placeholder="Enter the name" ng-model="name" required><br>
+				       		<label for="address">Address:</label><input type="text" id="address" name="address" placeholder="Enter the address"ng-model="address" required><br>
+				       		<label for="phone">Phone:</label><input type="number" id="phone" name="phone" placeholder="Enter the phone" ng-model="phone" required><br>
+				       		<label for="email">Email:</label><input type="email" id="email" name="email" placeholder="Enter the email (optional)" ng-model="email">
+				       	</form>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				        <button id="save" type="button" ng-click="save()" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+		  	</div>
 	  	</div>
 	</div>
 	</body>

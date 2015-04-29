@@ -1,0 +1,18 @@
+td.showName {
+    position: relative;
+    margin:5px;
+}
+td.showName:hover button {
+    display: inline;
+}
+td.showName button {
+    display:none;
+}
+td.showName button.edit {
+    top:0;
+    float:right;
+}
+td.showName button.delete {
+    top:0;
+    float:right;
+}
