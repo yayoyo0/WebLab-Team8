@@ -200,7 +200,7 @@ a.sbSelector:link, a.sbSelector:visited, a.sbSelector:hover {
 }
 
 .sbHolder .sbToggle {
-	background: url(../images/select-icons.png) 0 1px no-repeat;
+	background: url(../img/select-icons.png) 0 1px no-repeat;
 	right: 7px;
 	top: 12px;
 	width: 8px;
@@ -208,7 +208,7 @@ a.sbSelector:link, a.sbSelector:visited, a.sbSelector:hover {
 }
 
 .sbHolder .sbToggle:hover {
-	background: url(../images/select-icons.png) 0 1px no-repeat;
+	background: url(../img/select-icons.png) 0 1px no-repeat;
 }
 
 .sbOptions {
@@ -593,7 +593,7 @@ header, header * {
 }
 
 .toolbar_shadow {
-	background-image: url(../images/toolbar_shadow.png);
+	background-image: url(../img/toolbar_shadow.png);
 	background-size: contain;
 	background-repeat: no-repeat;
 	height: 21px;
@@ -604,7 +604,7 @@ header, header * {
 }
 
 .header_shadow {
-	background-image: url(../images/header_shadow.png);
+	background-image: url(../img/header_shadow.png);
 	background-repeat: no-repeat;
 	background-size: contain;
 	padding-bottom: 21px;
@@ -945,67 +945,67 @@ header.affix .bottom-header .navbar-default .navbar-brand .logo .secondary_text 
 }
 
 .dynamic-image-1 {
-	background: url(http://demo.themesuite.com/automotive/images/dynamic-header-1.jpg) top center no-repeat;
+	background: url(http://demo.themesuite.com/automotive/img/dynamic-header-1.jpg) top center no-repeat;
 }
 
 .dynamic-image-2 {
-	background: url(http://demo.themesuite.com/automotive/images/dynamic-header-2.jpg) top center no-repeat;
+	background: url(http://demo.themesuite.com/automotive/img/dynamic-header-2.jpg) top center no-repeat;
 }
 
 .dynamic-image-3 {
-	background: url(http://demo.themesuite.com/automotive/images/dynamic-header-3.jpg) top center no-repeat;
+	background: url(http://demo.themesuite.com/automotive/img/dynamic-header-3.jpg) top center no-repeat;
 }
 
 .dynamic-image-4 {
-	background: url(http://demo.themesuite.com/automotive/images/dynamic-header-4.jpg) top center no-repeat;
+	background: url(http://demo.themesuite.com/automotive/img/dynamic-header-4.jpg) top center no-repeat;
 }
 
 .dynamic-image-5 {
-	background: url(http://demo.themesuite.com/automotive/images/dynamic-header-5.jpg) top center no-repeat;
+	background: url(http://demo.themesuite.com/automotive/img/dynamic-header-5.jpg) top center no-repeat;
 }
 
 .dynamic-image-6 {
-	background: url(http://demo.themesuite.com/automotive/images/dynamic-header-6.jpg) top center no-repeat;
+	background: url(http://demo.themesuite.com/automotive/img/dynamic-header-6.jpg) top center no-repeat;
 }
 
 .dynamic-image-7 {
-	background: url(http://demo.themesuite.com/automotive/images/dynamic-header-7.jpg) top center no-repeat;
+	background: url(http://demo.themesuite.com/automotive/img/dynamic-header-7.jpg) top center no-repeat;
 }
 
 .dynamic-image-8 {
-	background: url(http://demo.themesuite.com/automotive/images/dynamic-header-8.jpg) top center no-repeat;
+	background: url(http://demo.themesuite.com/automotive/img/dynamic-header-8.jpg) top center no-repeat;
 }
 
 .dynamic-image-9 {
-	background: url(http://demo.themesuite.com/automotive/images/dynamic-header-9.jpg) top center no-repeat;
+	background: url(http://demo.themesuite.com/automotive/img/dynamic-header-9.jpg) top center no-repeat;
 }
 
 .dynamic-image-10 {
-	background: url(http://demo.themesuite.com/automotive/images/dynamic-header-10.jpg) top center no-repeat;
+	background: url(http://demo.themesuite.com/automotive/img/dynamic-header-10.jpg) top center no-repeat;
 }
 
 .dynamic-image-11 {
-	background: url(http://demo.themesuite.com/automotive/images/dynamic-header-11.jpg) top center no-repeat;
+	background: url(http://demo.themesuite.com/automotive/img/dynamic-header-11.jpg) top center no-repeat;
 }
 
 .dynamic-image-12 {
-	background: url(http://demo.themesuite.com/automotive/images/dynamic-header-12.jpg) top center no-repeat;
+	background: url(http://demo.themesuite.com/automotive/img/dynamic-header-12.jpg) top center no-repeat;
 }
 
 .dynamic-image-13 {
-	background: url(http://demo.themesuite.com/automotive/images/dynamic-header-13.jpg) top center no-repeat;
+	background: url(http://demo.themesuite.com/automotive/img/dynamic-header-13.jpg) top center no-repeat;
 }
 
 .dynamic-image-14 {
-	background: url(http://demo.themesuite.com/automotive/images/dynamic-header-14.jpg) top center no-repeat;
+	background: url(http://demo.themesuite.com/automotive/img/dynamic-header-14.jpg) top center no-repeat;
 }
 
 .dynamic-image-15 {
-	background: url(http://demo.themesuite.com/automotive/images/dynamic-header-15.jpg) top center no-repeat;
+	background: url(http://demo.themesuite.com/automotive/img/dynamic-header-15.jpg) top center no-repeat;
 }
 
 .dynamic-image-16 {
-	background: url(http://demo.themesuite.com/automotive/images/dynamic-header-16.jpg) top center no-repeat;
+	background: url(http://demo.themesuite.com/automotive/img/dynamic-header-16.jpg) top center no-repeat;
 }
 
 #secondary-banner h2 {
@@ -1037,7 +1037,7 @@ header.affix .bottom-header .navbar-default .navbar-brand .logo .secondary_text 
 	float: left;
 	padding-left: 15px;
 	padding-right: 30px;
-	background: url(../images/ribbon-bg.png) top right no-repeat;
+	background: url(../img/ribbon-bg.png) top right no-repeat;
 	line-height: 36px;
 	margin-right: 12px !important;
 }
@@ -1057,7 +1057,7 @@ header.affix .bottom-header .navbar-default .navbar-brand .logo .secondary_text 
 }
 
 .make_inventory .select-wrapper .my-dropdown .sbHolder .sbToggle {
-	background: url(../images/dropdown-arrow.png) no-repeat 0 -6px;
+	background: url(../img/dropdown-arrow.png) no-repeat 0 -6px;
 	top: 7px;
 	width: 12px;
 	height: 30px;
@@ -1156,7 +1156,7 @@ header.affix .bottom-header .navbar-default .navbar-brand .logo .secondary_text 
 }
 
 .search-form .select-wrapper .sbHolder .sbToggle {
-	background: url(../images/dropdown-arrow.png) no-repeat -2px -6px;
+	background: url(../img/dropdown-arrow.png) no-repeat -2px -6px;
 	top: 7px;
 	width: 12px;
 	height: 15px;
@@ -1204,7 +1204,7 @@ header.affix .bottom-header .navbar-default .navbar-brand .logo .secondary_text 
 }
 
 .search-form .select-wrapper .select-dropdown-large .sbHolder .sbToggle {
-	background: url(../images/arrow-dropdown.png) no-repeat 6px 2px;
+	background: url(../img/arrow-dropdown.png) no-repeat 6px 2px;
 	top: 8px;
 	width: 12px;
 	height: 26px;
@@ -1227,7 +1227,7 @@ header.affix .bottom-header .navbar-default .navbar-brand .logo .secondary_text 
 }
 
 .select-form .max-dropdown .sbHolder .sbToggle {
-	background: url(../images/arrow-dropdown.png) no-repeat 6px 2px;
+	background: url(../img/arrow-dropdown.png) no-repeat 6px 2px;
 	top: 8px;
 	width: 12px;
 	height: 26px;
@@ -1348,7 +1348,7 @@ table.right_table {
 }
 
 .slide-text-wrap .more-link {
-	background: url(../images/more.png) no-repeat;
+	background: url(../img/more.png) no-repeat;
 	width: 118px;
 	height: 32px;
 	display: block;
@@ -1360,7 +1360,7 @@ table.right_table {
 	border-bottom: solid 2px #fff;
 	border-top: solid 3px #fff;
 	padding: 22px 0;
-	background: #f0f0f0 url(../images/message-shadow.png) top center repeat-x;
+	background: #f0f0f0 url(../img/message-shadow.png) top center repeat-x;
 }
 
 .message-wrap .container .row {
@@ -1396,7 +1396,7 @@ table.right_table {
 	position: absolute;
 	width: 100%;
 	z-index: 77;
-	background: url(../images/message-shadow.png) top center repeat-x;
+	background: url(../img/message-shadow.png) top center repeat-x;
 	height: 21px;
 }
 
@@ -2192,83 +2192,83 @@ textarea, select, div.custom-select, input[type="search"] {
 }
 
 .sc-1 {
-	background: url(../images/social.png) 0px 0px no-repeat;
+	background: url(../img/social.png) 0px 0px no-repeat;
 }
 
 .sc-2 {
-	background: url(../images/social.png) -39px 0 no-repeat;
+	background: url(../img/social.png) -39px 0 no-repeat;
 }
 
 .sc-3 {
-	background: url(../images/social.png) -78px 0px no-repeat;
+	background: url(../img/social.png) -78px 0px no-repeat;
 }
 
 .sc-4 {
-	background: url(../images/social.png) -117px 0px no-repeat;
+	background: url(../img/social.png) -117px 0px no-repeat;
 }
 
 .sc-5 {
-	background: url(../images/social.png) -156px 0px no-repeat;
+	background: url(../img/social.png) -156px 0px no-repeat;
 }
 
 .sc-6 {
-	background: url(../images/social.png) -195px 0px no-repeat;
+	background: url(../img/social.png) -195px 0px no-repeat;
 }
 
 .sc-7 {
-	background: url(../images/social.png) -234px 0px no-repeat;
+	background: url(../img/social.png) -234px 0px no-repeat;
 }
 
 .sc-8 {
-	background: url(../images/social.png) -273px 0px no-repeat;
+	background: url(../img/social.png) -273px 0px no-repeat;
 }
 
 .sc-9 {
-	background: url(../images/social.png) -312px 0px no-repeat;
+	background: url(../img/social.png) -312px 0px no-repeat;
 }
 
 .sc-10 {
-	background: url(../images/social.png) -351px 0px no-repeat;
+	background: url(../img/social.png) -351px 0px no-repeat;
 }
 
 .sc-1:hover {
-	background: url(../images/social.png) 0px -32px no-repeat;
+	background: url(../img/social.png) 0px -32px no-repeat;
 }
 
 .sc-2:hover {
-	background: url(../images/social.png) -39px -32px no-repeat;
+	background: url(../img/social.png) -39px -32px no-repeat;
 }
 
 .sc-3:hover {
-	background: url(../images/social.png) -78px -32px no-repeat;
+	background: url(../img/social.png) -78px -32px no-repeat;
 }
 
 .sc-4:hover {
-	background: url(../images/social.png) -117px -32px no-repeat;
+	background: url(../img/social.png) -117px -32px no-repeat;
 }
 
 .sc-5:hover {
-	background: url(../images/social.png) -156px -32px no-repeat;
+	background: url(../img/social.png) -156px -32px no-repeat;
 }
 
 .sc-6:hover {
-	background: url(../images/social.png) -195px -32px no-repeat;
+	background: url(../img/social.png) -195px -32px no-repeat;
 }
 
 .sc-7:hover {
-	background: url(../images/social.png) -234px -32px no-repeat;
+	background: url(../img/social.png) -234px -32px no-repeat;
 }
 
 .sc-8:hover {
-	background: url(../images/social.png) -273px -32px no-repeat;
+	background: url(../img/social.png) -273px -32px no-repeat;
 }
 
 .sc-9:hover {
-	background: url(../images/social.png) -312px -32px no-repeat;
+	background: url(../img/social.png) -312px -32px no-repeat;
 }
 
 .sc-10:hover {
-	background: url(../images/social.png) -351px -32px no-repeat;
+	background: url(../img/social.png) -351px -32px no-repeat;
 }
 
 .f-nav {
@@ -2511,7 +2511,7 @@ input[type="text"], textarea, textarea[name="msg"], select, div.custom-select, i
 }
 
 div.custom-select, select, input[type="file"]:after {
-	background: url(../images/custom-select.png) no-repeat center right;
+	background: url(../img/custom-select.png) no-repeat center right;
 	border-radius: 4px 4px;
 }
 
@@ -2569,7 +2569,7 @@ input[type="file"]:after {
 	display: inline-block;
 	left: 100%;
 	position: relative;
-	background: url(../images/formelements-select.png) no-repeat center left;
+	background: url(../img/formelements-select.png) no-repeat center left;
 	padding: 0.3em 0.5em;
 	border: solid 1px #ccc !important;
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
@@ -2594,7 +2594,7 @@ label:before {
 	content: '';
 	width: 25px;
 	height: 20px;
-	background-image: url(../images/formelements.png);
+	background-image: url(../img/formelements.png);
 }
 
 input[type="checkbox"] + label:before {
@@ -2714,7 +2714,7 @@ div.custom-select:last-child {
 ----------------------------*/
 
 .parallax_scroll {
-	background-image: url(../images/parallax2.jpg);
+	background-image: url(../img/parallax2.jpg);
 	background-size: initial;
 	position: absolute;
 	left: 0;
@@ -2751,7 +2751,7 @@ div.custom-select:last-child {
 }
 
 .parallax_parent.design_2 .parallax_scroll {
-	background-image: url(../images/parallax1.jpg);
+	background-image: url(../img/parallax1.jpg);
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -3021,7 +3021,7 @@ div.custom-select:last-child {
 	padding: 0;
 	margin: 0;
 	border-left: none;
-	background: url(../images/quotation-open.png) top left, url(../images/quotation-close.png) bottom right;
+	background: url(../img/quotation-open.png) top left, url(../img/quotation-close.png) bottom right;
 	background-repeat: no-repeat;
 }
 
@@ -3084,7 +3084,7 @@ div.custom-select:last-child {
 
 .list_faq ul li {
 	display: inline-block;
-	background: url(../images/faq-listBg.png) right no-repeat;
+	background: url(../img/faq-listBg.png) right no-repeat;
 	padding-right: 17px;
 	padding-left: 4px;
 	margin-top: 10px;
@@ -3576,42 +3576,42 @@ ul.top_buttons li a {
 }
 
 .page-view li:nth-child(1) a, .page-view li.active:nth-child(1) a, .page-view li.active:nth-child(1) a:hover {
-	background-image: url(../images/grid.png);
+	background-image: url(../img/grid.png);
 	background-repeat: no-repeat;
 	background-position: 10px 8px;
 	border-radius: 4px 0 0 4px;
 }
 
 .page-view li:nth-child(2) a, .page-view li.active:nth-child(2) a, .page-view li.active:nth-child(2) a:hover {
-	background-image: url(../images/grid.png);
+	background-image: url(../img/grid.png);
 	background-repeat: no-repeat;
 	background-position: -25px 8px;
 	border-radius: 0;
 }
 
 .page-view li:nth-child(3) a, .page-view li.active:nth-child(3) a, .page-view li.active:nth-child(3) a:hover {
-	background-image: url(../images/grid.png);
+	background-image: url(../img/grid.png);
 	background-repeat: no-repeat;
 	background-position: -61px 8px;
 	border-radius: 0;
 }
 
 .page-view li:nth-child(4) a, .page-view li.active:nth-child(4) a, .page-view li.active:nth-child(4) a:hover {
-	background-image: url(../images/grid.png);
+	background-image: url(../img/grid.png);
 	background-repeat: no-repeat;
 	background-position: -96px 8px;
 	border-radius: 0;
 }
 
 .page-view li:nth-child(5) a, .page-view li.active:nth-child(5) a, .page-view li.active:nth-child(5) a:hover {
-	background-image: url(../images/grid.png);
+	background-image: url(../img/grid.png);
 	background-repeat: no-repeat;
 	background-position: -133px 8px;
 	border-radius: 0;
 }
 
 .page-view li:nth-child(6) a, .page-view li.active:nth-child(6) a, .page-view li.active:nth-child(6) a:hover {
-	background-image: url(../images/grid.png);
+	background-image: url(../img/grid.png);
 	background-repeat: no-repeat;
 	background-position: -169px 8px;
 	border-radius: 0;
@@ -4666,7 +4666,7 @@ div.example-tabs .nav-tabs>li>a {
 }
 
 .video-link:active {
-	background: url(../images/input-bg-hover.png) top repeat-x;
+	background: url(../img/input-bg-hover.png) top repeat-x;
 }
 
 .car-info-wrap p {
@@ -5291,7 +5291,7 @@ a.inventory {
 	top: 0;
 	left: 0;
 	min-height: 173px;
-	background-image: url('../images/empty.png');
+	background-image: url('../img/empty.png');
 	z-index: 1;
 	text-decoration: none;
 }
@@ -6170,7 +6170,7 @@ div.secect_costom4 {
 }
 
 .arrow2 a {
-	background: url(../images/arrow.png) no-repeat #ccc;
+	background: url(../img/arrow.png) no-repeat #ccc;
 	text-indent: -9999px
 }
 
@@ -6196,7 +6196,7 @@ div.secect_costom4 {
 }
 
 .arrow3 a {
-	background: url(../images/arrow.png) no-repeat #ccc;
+	background: url(../img/arrow.png) no-repeat #ccc;
 	text-indent: -9999px
 }
 
@@ -6235,7 +6235,7 @@ div.secect_costom4 {
 .featured_slider div.slide a {
 	width: 120px;
 	height: 82px;
-	background: url(../images/sprite-img.png) no-repeat;
+	background: url(../img/sprite-img.png) no-repeat;
 	display: block;
 	text-indent: -9999px;
 }
@@ -6381,7 +6381,7 @@ img.aligncenter {
 .blog-end .social-buttons .socialite {
 	display: block;
 	position: relative;
-	background: url('../images/social-sprite.png') 0 0 no-repeat;
+	background: url('../img/social-sprite.png') 0 0 no-repeat;
 }
 
 .blog-end .social-buttons .socialite-loaded {
@@ -6715,292 +6715,292 @@ fieldset#contact_form input[type="text"], fieldset#contact_form input[type="emai
 }
 
 body.background_1 {
-	background: url(../images/backgrounds/bg01.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg01.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_2 {
-	background: url(../images/backgrounds/bg02.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg02.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_3 {
-	background: url(../images/backgrounds/bg03.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg03.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_4 {
-	background: url(../images/backgrounds/bg04.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg04.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_5 {
-	background: url(../images/backgrounds/bg05.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg05.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_6 {
-	background: url(../images/backgrounds/bg06.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg06.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_7 {
-	background: url(../images/backgrounds/bg07.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg07.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_8 {
-	background: url(../images/backgrounds/bg08.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg08.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_9 {
-	background: url(../images/backgrounds/bg09.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg09.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_10 {
-	background: url(../images/backgrounds/bg10.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg10.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_11 {
-	background: url(../images/backgrounds/bg11.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg11.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_12 {
-	background: url(../images/backgrounds/bg12.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg12.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_13 {
-	background: url(../images/backgrounds/bg13.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg13.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_14 {
-	background: url(../images/backgrounds/bg14.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg14.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_15 {
-	background: url(../images/backgrounds/bg15.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg15.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_16 {
-	background: url(../images/backgrounds/bg16.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg16.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_17 {
-	background: url(../images/backgrounds/bg17.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg17.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_18 {
-	background: url(../images/backgrounds/bg18.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg18.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_19 {
-	background: url(../images/backgrounds/bg19.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg19.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_20 {
-	background: url(../images/backgrounds/bg20.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg20.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_21 {
-	background: url(../images/backgrounds/bg21.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg21.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_22 {
-	background: url(../images/backgrounds/bg22.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg22.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_23 {
-	background: url(../images/backgrounds/bg23.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg23.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_24 {
-	background: url(../images/backgrounds/bg24.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg24.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_25 {
-	background: url(../images/backgrounds/bg25.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg25.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_26 {
-	background: url(../images/backgrounds/bg26.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg26.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_27 {
-	background: url(../images/backgrounds/bg27.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg27.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_28 {
-	background: url(../images/backgrounds/bg28.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg28.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_29 {
-	background: url(../images/backgrounds/bg29.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg29.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_30 {
-	background: url(../images/backgrounds/bg30.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg30.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_31 {
-	background: url(../images/backgrounds/bg31.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg31.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 body.background_32 {
-	background: url(../images/backgrounds/bg32.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/backgrounds/bg32.jpg) no-repeat 100% 100% fixed;
 	background-size: 100% 100%;
 }
 
 /* Patterns */
 body.pattern_1 {
-	background-image: url(../images/patterns/45degreee_fabric.png);
+	background-image: url(../img/patterns/45degreee_fabric.png);
 }
 
 body.pattern_2 {
-	background-image: url(../images/patterns/absurdidad.png);
+	background-image: url(../img/patterns/absurdidad.png);
 }
 
 body.pattern_3 {
-	background-image: url(../images/patterns/arches.png);
+	background-image: url(../img/patterns/arches.png);
 }
 
 body.pattern_4 {
-	background-image: url(../images/patterns/bedge_grunge.png);
+	background-image: url(../img/patterns/bedge_grunge.png);
 }
 
 body.pattern_5 {
-	background-image: url(../images/patterns/cubes.png);
+	background-image: url(../img/patterns/cubes.png);
 }
 
 body.pattern_6 {
-	background-image: url(../images/patterns/dark_tire.png);
+	background-image: url(../img/patterns/dark_tire.png);
 }
 
 body.pattern_7 {
-	background-image: url(../images/patterns/darkdenim.png);
+	background-image: url(../img/patterns/darkdenim.png);
 }
 
 body.pattern_8 {
-	background-image: url(../images/patterns/debut_light.png);
+	background-image: url(../img/patterns/debut_light.png);
 }
 
 body.pattern_9 {
-	background-image: url(../images/patterns/diamond_upholstery.png);
+	background-image: url(../img/patterns/diamond_upholstery.png);
 }
 
 body.pattern_10 {
-	background-image: url(../images/patterns/doubled_lined.png);
+	background-image: url(../img/patterns/doubled_lined.png);
 }
 
 body.pattern_11 {
-	background-image: url(../images/patterns/dust.png);
+	background-image: url(../img/patterns/dust.png);
 }
 
 body.pattern_12 {
-	background-image: url(../images/patterns/gplaypattern.png);
+	background-image: url(../img/patterns/gplaypattern.png);
 }
 
 body.pattern_13 {
-	background-image: url(../images/patterns/gray_jean.png);
+	background-image: url(../img/patterns/gray_jean.png);
 }
 
 body.pattern_14 {
-	background-image: url(../images/patterns/grey.png);
+	background-image: url(../img/patterns/grey.png);
 }
 
 body.pattern_15 {
-	background-image: url(../images/patterns/gridme.png);
+	background-image: url(../img/patterns/gridme.png);
 }
 
 body.pattern_16 {
-	background-image: url(../images/patterns/light_noise_diagonal.png);
+	background-image: url(../img/patterns/light_noise_diagonal.png);
 }
 
 body.pattern_17 {
-	background-image: url(../images/patterns/lined_paper.png);
+	background-image: url(../img/patterns/lined_paper.png);
 }
 
 body.pattern_18 {
-	background-image: url(../images/patterns/linen.png);
+	background-image: url(../img/patterns/linen.png);
 }
 
 body.pattern_19 {
-	background-image: url(../images/patterns/low_contrast_linen.png);
+	background-image: url(../img/patterns/low_contrast_linen.png);
 }
 
 body.pattern_20 {
-	background-image: url(../images/patterns/noise_lines.png);
+	background-image: url(../img/patterns/noise_lines.png);
 }
 
 body.pattern_21 {
-	background-image: url(../images/patterns/noisy_grid.png);
+	background-image: url(../img/patterns/noisy_grid.png);
 }
 
 body.pattern_22 {
-	background-image: url(../images/patterns/px.png);
+	background-image: url(../img/patterns/px.png);
 }
 
 body.pattern_23 {
-	background-image: url(../images/patterns/shl.png);
+	background-image: url(../img/patterns/shl.png);
 }
 
 body.pattern_24 {
-	background-image: url(../images/patterns/subtle_dots.png);
+	background-image: url(../img/patterns/subtle_dots.png);
 }
 
 body.pattern_25 {
-	background-image: url(../images/patterns/subtle_zebra_3d.png);
+	background-image: url(../img/patterns/subtle_zebra_3d.png);
 }
 
 body.pattern_26 {
-	background-image: url(../images/patterns/subtlenet2.png);
+	background-image: url(../img/patterns/subtlenet2.png);
 }
 
 body.pattern_27 {
-	background-image: url(../images/patterns/tex2res4.png);
+	background-image: url(../img/patterns/tex2res4.png);
 }
 
 body.pattern_28 {
-	background-image: url(../images/patterns/tiny_grid.png);
+	background-image: url(../img/patterns/tiny_grid.png);
 }
 
 body.pattern_29 {
-	background-image: url(../images/patterns/vintage_speckles.png);
+	background-image: url(../img/patterns/vintage_speckles.png);
 }
 
 body.pattern_30 {
-	background-image: url(../images/patterns/white_bed_sheet.png);
+	background-image: url(../img/patterns/white_bed_sheet.png);
 }
 
 body.pattern_31 {
-	background-image: url(../images/patterns/wild_olivia.png);
+	background-image: url(../img/patterns/wild_olivia.png);
 }
 
 body.pattern_32 {
-	background-image: url(../images/patterns/worn_dots.png);
+	background-image: url(../img/patterns/worn_dots.png);
 }
 
 section.content, .car-block-wrap, .welcome-wrap {
