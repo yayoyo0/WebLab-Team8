@@ -112,6 +112,46 @@ app.get('/', function (req, res, next)
   res.end(data.toString().replace(/host:port/g, req.header('Host')));
 });
 
+app.get('/index2', function (req, res, next)
+{
+  var data = fs.readFileSync(__dirname + '/index2.html');
+  res.status(200);
+  res.header('Content-Type', 'text/html');
+  res.end(data.toString().replace(/host:port/g, req.header('Host')));
+});
+
+app.get('/client', function (req, res, next)
+{
+  var data = fs.readFileSync(__dirname + '/clients.html');
+  res.status(200);
+  res.header('Content-Type', 'text/html');
+  res.end(data.toString().replace(/host:port/g, req.header('Host')));
+});
+
+app.get('/cars', function (req, res, next)
+{
+  var data = fs.readFileSync(__dirname + '/cars.html');
+  res.status(200);
+  res.header('Content-Type', 'text/html');
+  res.end(data.toString().replace(/host:port/g, req.header('Host')));
+});
+
+app.get('/about', function (req, res, next)
+{
+  var data = fs.readFileSync(__dirname + '/about.html');
+  res.status(200);
+  res.header('Content-Type', 'text/html');
+  res.end(data.toString().replace(/host:port/g, req.header('Host')));
+});
+
+app.get('/contact', function (req, res, next)
+{
+  var data = fs.readFileSync(__dirname + '/contact.html');
+  res.status(200);
+  res.header('Content-Type', 'text/html');
+  res.end(data.toString().replace(/host:port/g, req.header('Host')));
+});
+
 app.get(/\/(css|js|img)\/?.*/, restify.serveStatic({directory: './static/'}));
 
 app.listen(config.get('PORT'), config.get('IP'), function () {
