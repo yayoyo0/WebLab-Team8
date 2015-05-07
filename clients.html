@@ -36,13 +36,15 @@
 <link rel="stylesheet" type="text/css" href="css/settings.css" media="screen" />
 <link href="css/animate.min.css" rel="stylesheet">
 <link href="css/ts.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.themepunch.tools.min.js"></script>
 <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
 <script type="text/javascript" src="js/wow.min.js"></script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?AIzaSyCDg2qnamNzLfz8ogmDCgMg80-LYPkOyX8&amp;sensor=false"></script>
-
+<script src="js/angular.js"></script>
+<script src="js/app.js"></script>
+<script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -53,14 +55,7 @@
             <div class="row">
                 <div class="col-lg-6 left_bar">
                     <ul class="left-none">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin"><i class="fa fa-user"></i> Login</a>
-                        <div class="dropdown-menu" style="padding:17px;">
-                            <form class="form" id="formLogin">
-                                <input name="username" id="username" type="text" placeholder="Username">
-                                <input name="password" id="password" type="password" placeholder="Password"><br>
-                                <button type="button" id="btnLogin" class="btn">Login</button>
-                            </form>
-                        </div>
+                        <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-6 ">
@@ -111,7 +106,7 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 ">
                 <ul class="breadcrumb">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Clients</li>
                 </ul>
             </div>
@@ -134,74 +129,104 @@
                             </div>      
                         </div>
                     </form>
-                <!-- INSERT CLIENTS TABLE HERE!! -->
-                    <div class="table-responsive" style="overflow-x:scroll;">
-                            <!--<table class="table table-bordered table-striped" style="margin-top:10px;">-->
-                        <table class="table table-condensed table-bordered" >
-                            <thead>
-                              <tr>
-                                <td>
-                                  <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
-                                    Name
-                                    <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
-                                  </a>
-                                </td>
-                                <td>
-                                  <a href="#" ng-click="sortType = 'address'; sortReverse = !sortReverse">
-                                  Address
-                                    <span ng-show="sortType == 'address' && !sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'address' && sortReverse" class="fa fa-caret-up"></span>
-                                  </a>
-                                </td>
-                                <td>
-                                  <a href="#" ng-click="sortType = 'phone'; sortReverse = !sortReverse">
-                                  Phone
-                                    <span ng-show="sortType == 'phone' && !sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'phone' && sortReverse" class="fa fa-caret-up"></span>
-                                  </a>
-                                </td>
-                                  <td>
-                                  <a href="#" ng-click="sortType = 'email'; sortReverse = !sortReverse">
-                                  Email
-                                    <span ng-show="sortType == 'email' && !sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'email' && sortReverse" class="fa fa-caret-up"></span>
-                                  </a>
-                                </td>
-                                  <td>Actions</td>
-                              </tr>
-                            </thead>
+                    <table class="table table-bordered table-striped" style="margin-top:10px;">
+                    <thead>
+                      <tr>
+                        <td>
+                          <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                            Name
+                            <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+                          </a>
+                        </td>
+                        <td>
+                          <a href="#" ng-click="sortType = 'address'; sortReverse = !sortReverse">
+                          Address
+                            <span ng-show="sortType == 'address' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'address' && sortReverse" class="fa fa-caret-up"></span>
+                          </a>
+                        </td>
+                        <td>
+                          <a href="#" ng-click="sortType = 'phone'; sortReverse = !sortReverse">
+                          Phone
+                            <span ng-show="sortType == 'phone' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'phone' && sortReverse" class="fa fa-caret-up"></span>
+                          </a>
+                        </td>
+                          <td>
+                          <a href="#" ng-click="sortType = 'email'; sortReverse = !sortReverse">
+                          Email
+                            <span ng-show="sortType == 'email' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'email' && sortReverse" class="fa fa-caret-up"></span>
+                          </a>
+                        </td>
+                        <td>
+                            Actions
+                        </td>
+                      </tr>
+                    </thead>
 
-                            <tbody>
-                              <tr ng-repeat="cliente in clientes | orderBy:sortType:sortReverse | filter:searchClient" data-toggle="collapse" data-target=".demo1" class="accordion-toggle">
-                                  <td>{{cliente.name}}</td>
-                                  <td>{{cliente.address}}</td>
-                                  <td>{{cliente.phone}}</td>
-                                  <td>{{cliente.email}}</td>
-                                  <td>
-                                      <button class="edit fa fa-pencil-square-o">
-                                          <button class="delete fa fa-trash-o" ng-click="delete(cliente.name)"></button>
-                                      </button>
-                                  </td>
+                    <tbody>
+                        <accordion  close-others="false">
+                            <accordion-group ng-repeat="cliente in clientes | orderBy:sortType:sortReverse | filter:searchClient">
+                                <accordion-heading>
+                                    {{cliente.name}}
+                                    <td>{{cliente.address}}</td>
+                                    <td>{{cliente.phone}}</td>
+                                    <td>{{cliente.email}}</td>
+                                </accordion-heading>
+                                    <tr ng-repeat="car in cliente.cars" ng-bind-html="cliente.cars">
+                                        <p>PATATA</p>
+                                        {{car.brand}}
+                                        {{car.model}}
+                                        {{car.year}}
+                                        {{car.plates}}
+                                    </tr>
+                            </accordion-group>
+                        </accordion>
+                    </tbody>
+                </table>
 
-                              </tr>
-                              <tr>
-                                  <td class="hiddenRow">
-                                      <div class="collapse demo1">Car Brand</div>
-                                  </td>
-                                  <td class="hiddenRow">
-                                      <div class="collapse demo1">Car Model</div>
-                                  </td>
-                                  <td class="hiddenRow">
-                                      <div class="collapse demo1">Car Year</div>
-                                  </td>
-                                  <td class="hiddenRow">
-                                      <div class="collapse demo1">Car Mileage</div>
-                                  </td>
-                              </tr>
-                            </tbody>
-                        </table>
+                <button type="button" class="btn fa fa-plus-square fa-5x" data-toggle="modal" data-target="#myModal">
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Adding new client</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class="error" ng-show="error">
+                            {{errors[0]}}
+                        </div>
+                        <form>
+                            <table>
+                                <tr>
+                                    <td>Name:</td>      <td><input type="text" id="name" name="name" placeholder="Enter the name" ng-model="name" size="50" required></label></td>
+                                </tr>
+                                <tr>
+                                    <td>Address:</td>   <td><input type="text" id="address" name="address" placeholder="Enter the address"ng-model="address" size="50" required></td>
+                                </tr>
+                                <tr>
+                                    <td>Phone:</td>     <td><input type="number" id="phone" name="phone" placeholder="Enter the phone" ng-model="phone" size="50" required></td>
+                                </tr>
+                                <tr>
+                                    <td>Email:</td>     <td><input type="email" id="email" name="email" placeholder="Enter the email(optional)" ng-model="email" size="50"></td>
+                                </tr>
+                            </table>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button id="save" type="button" ng-click="save()" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                      </div>
                     </div>
+                  </div>
+                </div>
+
                 </div>
             </div>
         </div>
