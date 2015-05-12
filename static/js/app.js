@@ -6,11 +6,13 @@ angular.module('carfix', ['ui.bootstrap'])
   	$scope.errors = [];
     $scope.msgs = [];
     $scope.error = false;
+    $scope.clickedName = "";
+    $scope.clickedCar = "";
+
 
 	$http.get('http://carfix-rodriguezramirez.rhcloud.com/clients')
 	.success(function(data, status, headers, config) {
 		$scope.clientes = data;
-        console.log($scope.clientes);
 	  })
 	  .error(function(data, status, headers, config) {
 	  	$scope.clientes = data;
@@ -56,4 +58,10 @@ angular.module('carfix', ['ui.bootstrap'])
                 });
         });
     };
+
+    $scope.getDetails = function(name, car){
+        $scope.clickedName = name;
+        $scope.clickedCar = car;
+        
+    }
 });
