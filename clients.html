@@ -202,19 +202,24 @@
                         <div class="error" ng-show="error">
                             {{errors[0]}}
                         </div>
-                        <form>
+                        <form name="frm">
                             <table>
                                 <tr>
                                     <td>Name:</td>      <td><input type="text" id="name" name="name" placeholder="Enter the name" ng-model="name" size="50" required></label></td>
+                                    <span ng-show="frm.name.$dirty && frm.name.$error.required">Field required!</span>
                                 </tr>
                                 <tr>
                                     <td>Address:</td>   <td><input type="text" id="address" name="address" placeholder="Enter the address"ng-model="address" size="50" required></td>
+                     				<span ng-show="frm.name.$dirty && frm.name.$error.required">Field required!</span>
                                 </tr>
                                 <tr>
-                                    <td>Phone:</td>     <td><input type="number" id="phone" name="phone" placeholder="Enter the phone" ng-model="phone" size="50" required></td>
+                                    <td>Phone:</td>     <td><input type="number" id="phone" name="phone" placeholder="Enter the phone" ng-model="phone" size="50" required ng-minlength="6" ng-maxlength="10"></td>
+                                    <span ng-show="frm.name.$dirty && frm.name.$error.minlength">Too short!</span>
+                                    <span ng-show="frm.name.$dirty && frm.name.$error.maxlength">Too long!</span>
                                 </tr>
                                 <tr>
                                     <td>Email:</td>     <td><input type="email" id="email" name="email" placeholder="Enter the email(optional)" ng-model="email" size="50"></td>
+                                    <span ng-show="frm.name.$error.email">Not an emaol!</span>
                                 </tr>
                             </table>
                         </form>
