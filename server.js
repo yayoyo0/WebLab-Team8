@@ -1,7 +1,7 @@
 var cc          = require('config-multipaas'),
     restify     = require('restify'),
     fs          = require('fs'),
-    mongojs 	= require('mongojs')
+    mongojs 	  = require('mongojs')
 
 
 var config      = cc(),
@@ -88,20 +88,11 @@ app.put('/clients/:name', function (req, res, next) {
         });
     });
     return next();
-})
+});
 
-
-
-app.put('/clients/:name', function (req, res, next) {
-  var client = clients[req.params.name];
-  var changes = req.params;
-  delete changes.name;
-  for(var x in changes) {
-    client[x] = changes[x];
-  }
-  res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
-  res.end(JSON.stringify(client));
-  return next();
+app.put('/car/:name', function (req, res, next) {
+    db.clients.update({name: req.params.name}, { $push: { cars: req.params }})
+    return next();
 });
 
 app.get('/', function (req, res, next)
@@ -112,13 +103,6 @@ app.get('/', function (req, res, next)
   res.end(data.toString().replace(/host:port/g, req.header('Host')));
 });
 
-app.get('/index2', function (req, res, next)
-{
-  var data = fs.readFileSync(__dirname + '/index2.html');
-  res.status(200);
-  res.header('Content-Type', 'text/html');
-  res.end(data.toString().replace(/host:port/g, req.header('Host')));
-});
 
 app.get('/client', function (req, res, next)
 {

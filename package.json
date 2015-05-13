@@ -1,7 +1,7 @@
 {
   "name": "OpenShift-Nodejs-Cartridge",
-  "version": "3.1.0",
-  "description": "Node.js Cartridge for OpenShift",
+  "version": "4.5.0",
+  "description": "CarFix",
   "keywords": [
     "OpenShift",
     "Node.js",

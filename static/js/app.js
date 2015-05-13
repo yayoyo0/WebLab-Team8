@@ -6,9 +6,9 @@ angular.module('carfix', ['ui.bootstrap'])
   	$scope.errors = [];
     $scope.msgs = [];
     $scope.error = false;
-    $scope.clickedName = "";
-    $scope.clickedCar = "";
-
+    $scope.animatedShow;
+    $scope.detailedView = false;
+    $scope.addCarName = "";
 
 	$http.get('http://carfix-rodriguezramirez.rhcloud.com/clients')
 	.success(function(data, status, headers, config) {
@@ -25,14 +25,6 @@ angular.module('carfix', ['ui.bootstrap'])
         	"phone"   : $scope.phone,
         	"email"   : $scope.email
         	};
-            $scope.errors.splice(0, $scope.errors.length);
-            $scope.msgs.splice(0, $scope.msgs.length);
-
-            if($scope.name == undefined || $scope.address == undefined || $scope.phone == undefined){
-                $scope.errors.push("Please fill all fields.");
-                $scope.error = true;
-            }
-            else{
                 $http.post('http://carfix-rodriguezramirez.rhcloud.com/clients', client)
                 .success(function(data, status, headers, config) {
                     $http.get('http://carfix-rodriguezramirez.rhcloud.com/clients')
@@ -43,7 +35,30 @@ angular.module('carfix', ['ui.bootstrap'])
                 .error(function(data, status) {
                         $scope.errors.push(status);
                 });
-            }
+      };
+
+      $scope.carSave = function() {
+        var car =   {
+                        "brand"         : $scope.brand,
+                        "model"         : $scope.model,
+                        "year"          : $scope.year,
+                        "kilometers"    : $scope.km,
+                        "plates"        : $scope.plates,
+                        "sn"            : $scope.sn,
+                        "color"         : $scope.color
+                    };
+
+      $http.put('http://carfix-rodriguezramirez.rhcloud.com/car/' + $scope.addCarName, car)
+        .success(function (data, status, headers, config)
+        {
+            $http.get('http://carfix-rodriguezramirez.rhcloud.com/clients')
+            .success(function(data, status, headers, config) {
+                $scope.clientes = data;
+              })
+              .error(function(data, status, headers, config) {
+                $scope.clientes = data;
+              });
+        });
       };
 
     $scope.delete = function(name) {
@@ -59,9 +74,25 @@ angular.module('carfix', ['ui.bootstrap'])
         });
     };
 
+    $scope.setName = function(name){
+        $scope.addCarName = name;
+    }
+
     $scope.getDetails = function(name, car){
-        $scope.clickedName = name;
-        $scope.clickedCar = car;
+        $http.get('http://carfix-rodriguezramirez.rhcloud.com/clients/' + name)
+    .success(function(data, status, headers, config) {
+        $scope.brand = car;
+        $scope.clickedName = data.name;
+        $scope.clickedAddress = data.address;
+        $scope.clickedPhone = data.phone;
+        $scope.clickedEmail = data.email;
+        $scope.clickedCar = data.cars;
+        $scope.detailedView = true;
+      })
+      .error(function(data, status, headers, config) {
+        $scope.clientes = data;
+      });
+        
         
     }
 });
