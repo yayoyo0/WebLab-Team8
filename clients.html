@@ -1,4 +1,3 @@
-
 <!doctype html>
 <!--[if IE 7 ]> <html lang="en" class="ie7"> <![endif]-->
 <!--[if IE 8 ]> <html lang="en" class="ie8"> <![endif]-->
@@ -122,6 +121,7 @@
             <div class="row">
                 <div class="consider padding-bottom-40 clearfix" ng-controller="getData">
                     <form>
+                        <div class="row" ng-show="!detailedView">
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="fa fa-search"></i></div>
@@ -134,7 +134,6 @@
                                 <accordion-heading>
                                     {{cliente.name}}
                                 </accordion-heading>
-                                <div>
                                     <table class="table table-bordered table-striped" style="margin-left: 10px; margin-right: -10px; margin-top: 10px; margin-bottom: 10px;">
                                             <thead>
                                             <tr>
@@ -146,25 +145,126 @@
                                         </thead>
                                             <tbody ng-repeat="car in cliente.cars" ng-bind-html="cliente.cars">
                                                     <tr>
-                                                        <td><a href="#details" ng-click = "getDetails(cliente.name, car.brand)">{{car.brand}}</a></td>
+                                                        <td><a href="" ng-click="getDetails(cliente.name, car.brand)">{{car.brand}}</a></td>
                                                         <td>{{car.model}}</td>
                                                         <td>{{car.year}}</td>
                                                         <td>{{car.plates}}</td>
                                                     </tr>
                                             </tbody>
                                     </table>
-                                </div>
                             </accordion-group>
                         </accordion>
-                        <br>
-                    <div >
-                        <a name="details"></a> 
-                            {{clickedName}}<br>
-                            {{clickedCar}}
-                        
+                            <br>
+                            <div class="row">
+                                <button type="button" class="btn fa fa-plus-square fa-3x" data-toggle="modal" data-target="#myModal"></button>
+                            </div>
+                        </div>
+                        <div class="row" ng-show="detailedView">
+                            <div class="row">
+                                <hr>
+                                <h3>Client information:</h3>
+                                <div class="col-lg-3">
+                                    <b>Client name:</b> {{clickedName}}
+                                </div>
+                                <div class="col-lg-3">                                        
+                                    <b>Client address: </b>{{clickedAddress}}
+                                </div>
+                                <div class="col-lg-3">
+                                    <b>Client phone: </b>{{clickedPhone}}
+                                </div>
+                                <div class="col-lg-3">
+                                    <b>Client email: </b> <a href="mailto:{{clickedEmail}}?Subject=Carfix" target="_top">{{clickedEmail}}</a> 
+                                </div>
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="row">
+                                <h4>Car details</h4>
+                                <div class="col-lg-2">
+                                    <b>Car brand: </b> 
+                                    <span ng-repeat= "car in clickedCar" ng-if="car.brand == brand">{{car.brand}}</span>
+                                </div>
+                                <div class="col-lg-2">
+                                    <b>Car model: </b> 
+                                    <span ng-repeat= "car in clickedCar" ng-if="car.brand == brand">{{car.model}}</span>
+                                </div>
+                                <div class="col-lg-2">
+                                    <b>Car year: </b> 
+                                    <span ng-repeat= "car in clickedCar" ng-if="car.brand == brand">{{car.year}}</span>
+                                </div>
+                                <div class="col-lg-2">
+                                    <b>Car kilometers: </b> 
+                                    <span ng-repeat= "car in clickedCar" ng-if="car.brand == brand">{{car.kilometers}}</span>
+                                </div>
+                                <div class="col-lg-2">
+                                    <b>Car plates: </b> 
+                                    <span ng-repeat= "car in clickedCar" ng-if="car.brand == brand">{{car.plates}}</span>
+                                </div>
+                                <div class="col-lg-3">
+                                    <b>Car serial number: </b> 
+                                    <span ng-repeat= "car in clickedCar" ng-if="car.brand == brand">{{car.sn}}</span>
+                                </div>
+                                <div class="col-lg-1">
+                                    <b>Car color: </b> 
+                                    <span ng-repeat= "car in clickedCar" ng-if="car.brand == brand">{{car.color}}</span>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row" ng-repeat= "car in clickedCar" ng-if="car.brand == brand">
+                            <div class="col-lg-12"> 
+                                <table class="table table-bordered table-striped" style="margin-top:10px;">
+                                <thead>
+                                  <tr>
+                                    <td>
+                                      <a href="#" ng-click="sortType = 'car.service'; sortReverse = !sortReverse">
+                                        Service
+                                        <span ng-show="sortType == 'car.service' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'car.service' && sortReverse" class="fa fa-caret-up"></span>
+                                      </a>
+                                    </td>
+                                    <td>
+                                      <a href="#" ng-click="sortType = 'car.cost'; sortReverse = !sortReverse">
+                                      Cost
+                                        <span ng-show="sortType == 'car.cost' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'car.cost' && sortReverse" class="fa fa-caret-up"></span>
+                                      </a>
+                                    </td>
+                                    <td>
+                                      <a href="#" ng-click="sortType = 'mechanic'; sortReverse = !sortReverse">
+                                      Mechanic
+                                        <span ng-show="sortType == 'mechanic' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'mechanic' && sortReverse" class="fa fa-caret-up"></span>
+                                      </a>
+                                    </td>
+                                      <td>
+                                      <a href="#" ng-click="sortType = 'date'; sortReverse = !sortReverse">
+                                      Date
+                                        <span ng-show="sortType == 'date' && !sortReverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="sortType == 'date' && sortReverse" class="fa fa-caret-up"></span>
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </thead>
+
+                                <tbody>
+                                  <tr ng-repeat= "car in clickedCar | orderBy:sortType:sortReverse">
+
+                                    <div ng-if="car.brand == brand">
+                                        <td>{{car.service}}</td>
+                                        <td>{{car.cost}}</td>
+                                        <td>{{car.mechanic}}</td>
+                                        <td>{{car.date}}</td>
+                                    </div>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                <button type="button" class="btn fa fa-plus-square fa-5x" data-toggle="modal" data-target="#myModal">
-                </button>
+
+                            <div class="row">
+                              <div class="col-md-2 col-md-offset-10"><a href="" ng-click="detailedView=false"><i class="fa fa-chevron-left"></i>Back</a></div>
+                            </div>
+                        </div>
 
                 <!-- Modal -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -179,25 +279,29 @@
                             {{errors[0]}}
                         </div>
                         <form name="frm">
-                            <table>
-                                <tr>
-                                    <td>Name:</td>      <td><input type="text" id="name" name="name" placeholder="Enter the name" ng-model="name" size="50" required></label></td>
-                                    <span ng-show="frm.name.$dirty && frm.name.$error.required">Field required!</span>
-                                </tr>
-                                <tr>
-                                    <td>Address:</td>   <td><input type="text" id="address" name="address" placeholder="Enter the address"ng-model="address" size="50" required></td>
-                                    <span ng-show="frm.address.$dirty && frm.name.$error.required">Field required!</span>
-                                </tr>
-                                <tr>
-                                    <td>Phone:</td>     <td><input type="number" id="phone" name="phone" placeholder="Enter the phone" ng-model="phone" size="50" required ng-minlength="6" ng-maxlength="10"></td>
+                            <div class="row">
+                                <div class="col-lg-2">Name:</div>      
+                                <div class="col-lg-7"><input type="text" id="name" name="name" placeholder="Enter the name" ng-model="name" required></div>
+                                <div class="col-md-3"><span ng-show="frm.name.$dirty && frm.name.$error.required">Field required!</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2">Address:</div>   
+                                <div class="col-lg-7"><input type="text" id="address" name="address" placeholder="Enter the address" ng-model="address" required></div>
+                                <div class="col-md-3"><span ng-show="frm.address.$dirty && frm.address.$error.required">Field required!</span></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2">Phone:</div>     
+                                <div class="col-lg-7"><input type="number" id="phone" name="phone" placeholder="Enter the phone" ng-model="phone" required ng-minlength="6" ng-maxlength="10" required></div>
+                                <div class="col-md-3">
                                     <span ng-show="frm.phone.$dirty && frm.phone.$error.minlength">Too short!</span>
                                     <span ng-show="frm.phone.$dirty && frm.phone.$error.maxlength">Too long!</span>
-                                </tr>
-                                <tr>
-                                    <td>Email:</td>     <td><input type="email" id="email" name="email" placeholder="Enter the email(optional)" ng-model="email" size="50"></td>
-                                    <span ng-show="frm.email.$error.email">Not an email!</span>
-                                </tr>
-                            </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2">Email:</div>     
+                                <div class="col-lg-7"><input type="email" id="email" name="email" placeholder="Enter the email(optional)" ng-model="email"></div>
+                                <div class="col-md-3"> <span ng-show="frm.email.$dirty && frm.email.$error.email">Not an email!</span> </div>
+                            </div>
                         </form>
                       </div>
                       <div class="modal-footer">
@@ -207,7 +311,6 @@
                     </div>
                   </div>
                 </div>
-
                 </div>
             </div>
         </div>
@@ -221,7 +324,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <div class="logo-footer margin-bottom-20 md-margin-bottom-20 sm-margin-bottom-10 xs-margin-bottom-20"><a href="#">
+                <div class="logo-footer margin-bottom-20 md-margin-bottom-20 sm-margin-bottom-10 xs-margin-bottom-20"><a href="/">
                     <h1>Car-Fix</h1>
                     <span>Garage</span></a>
                 </div>
