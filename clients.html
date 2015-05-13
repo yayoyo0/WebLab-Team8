@@ -81,7 +81,6 @@
                         <ul class="nav navbar-nav pull-right">
                             <li><a href="/">Home</a></li>
                             <li class="active"><a href="/client">Clients</a></li>
-                            <li><a href="/cars">Cars</a></li>
                             <li><a href="/about">About US</a></li>
                             <li><a href="/contact">Contact</a></li>
                         </ul>
@@ -146,7 +145,7 @@
                                         </thead>
                                             <tbody ng-repeat="car in cliente.cars" ng-bind-html="cliente.cars">
                                                     <tr>
-                                                        <td><a href="" ng-click="getDetails(cliente.name, car.brand)">{{car.brand}}</a></td>
+                                                        <td><a href="" ng-click="getDetails(cliente.name, car.plates)">{{car.brand}}</a></td>
                                                         <td>{{car.model}}</td>
                                                         <td>{{car.year}}</td>
                                                         <td>{{car.plates}}</td>
@@ -186,7 +185,7 @@
                             <br>
 
                             <div ng-repeat= "car in clickedCar">
-                                <div ng-if="car.brand == brand">
+                                <div ng-if="car.plates == plates">
                             <div class="row">
                                 <h3>Car details</h3>
                                 <div class="col-lg-3">
@@ -260,7 +259,6 @@
                                             <td>{{service.cost}}</td>
                                             <td>{{service.mechanic}}</td>
                                             <td>{{service.date}}</td>
-                                        </div>
                                         </tr>
                                     </tbody>
                                 </table>
