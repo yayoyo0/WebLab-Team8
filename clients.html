@@ -54,7 +54,14 @@
             <div class="row">
                 <div class="col-lg-6 left_bar">
                     <ul class="left-none">
-                        <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin"><i class="fa fa-user"></i> Login</a>
+                        <div class="dropdown-menu" style="padding:17px;">
+                            <form class="form" id="formLogin">
+                                <input name="username" id="username" type="text" placeholder="Username">
+                                <input name="password" id="password" type="password" placeholder="Password"><br>
+                                <button type="button" id="btnLogin" class="btn">Login</button>
+                            </form>
+                        </div>
                     </ul>
                 </div>
                 <div class="col-lg-6 ">
@@ -264,7 +271,7 @@
                                 </table>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <button>Add service</button>
+                                        <button data-toggle="modal" data-target="#myModal3">Add service</button>
                                     </div>
                                 </div>
                                 <br>
@@ -385,6 +392,49 @@
                 </div>
                 <!-- Modal carends-->
 
+                <!-- Modal Service -->
+                <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Adding new service</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="error" ng-show="error">
+                                    {{errors[0]}}
+                                </div>
+                                <form name="frm">
+                                    <div class="row">
+                                        <div class="col-lg-2">Service:</div>
+                                        <div class="col-lg-7"><input type="text" id="service" name="service" placeholder="Enter the service" ng-model="service" required></div>
+                                        <div class="col-md-3"><span ng-show="frm.service.$dirty && frm.service.$error.required">Field required!</span></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-2">Cost:</div>
+                                        <div class="col-lg-7"><input type="text" id="cost" name="cost" placeholder="Cost of the service" ng-model="cost" required></div>
+                                        <div class="col-md-3"><span ng-show="frm.address.$dirty && frm.address.$error.required">Field required!</span></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-2">Mechanic:</div>
+                                        <div class="col-lg-7"><input type="text" id="mechanic" name="mechanic" placeholder="Name of the mechanic" ng-model="mechanic" required></div>
+                                        <div class="col-md-3"><span ng-show="frm.mechanic.$dirty && frm.mechanic.$error.required">Field required!</span></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-2">Date:</div>
+                                        <div class="col-lg-7"><input type="text" id="date" name="date" placeholder="Enter the date of the service" ng-model="date"></div>
+                                        <div class="col-md-3"> <span ng-show="frm.date.$dirty && frm.date.$error.email">Field required!</span> </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button id="save" type="button" ng-click="save()" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal service ends-->
                 </div>
             </div>
         </div>
