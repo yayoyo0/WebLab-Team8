@@ -4,27 +4,9 @@ ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   SNYK-JS-LODASH-567746:
-    - mongojs > nyc > istanbul-lib-instrument > @babel/types > lodash:
-        patched: '2020-06-09T18:05:35.662Z'
-    - mongojs > nyc > istanbul-lib-instrument > @babel/generator > lodash:
-        patched: '2020-06-09T18:05:35.662Z'
-    - mongojs > nyc > istanbul-lib-instrument > @babel/traverse > lodash:
-        patched: '2020-06-09T18:05:35.662Z'
-    - mongojs > nyc > istanbul-lib-instrument > @babel/generator > @babel/types > lodash:
-        patched: '2020-06-09T18:05:35.662Z'
-    - mongojs > nyc > istanbul-lib-instrument > @babel/template > @babel/types > lodash:
-        patched: '2020-06-09T18:05:35.662Z'
-    - mongojs > nyc > istanbul-lib-instrument > @babel/traverse > @babel/types > lodash:
-        patched: '2020-06-09T18:05:35.662Z'
-    - mongojs > nyc > istanbul-lib-instrument > @babel/traverse > @babel/generator > lodash:
-        patched: '2020-06-09T18:05:35.662Z'
-    - mongojs > nyc > istanbul-lib-instrument > @babel/traverse > @babel/generator > @babel/types > lodash:
-        patched: '2020-06-09T18:05:35.662Z'
-    - mongojs > nyc > istanbul-lib-instrument > @babel/traverse > @babel/helper-function-name > @babel/types > lodash:
-        patched: '2020-06-09T18:05:35.662Z'
-    - mongojs > nyc > istanbul-lib-instrument > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
-        patched: '2020-06-09T18:05:35.662Z'
-    - mongojs > nyc > istanbul-lib-instrument > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
-        patched: '2020-06-09T18:05:35.662Z'
-    - mongojs > nyc > istanbul-lib-instrument > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
-        patched: '2020-06-09T18:05:35.662Z'
+    - restify > lodash:
+        patched: '2020-06-09T18:06:21.575Z'
+    - restify > restify-errors > lodash:
+        patched: '2020-06-09T18:06:21.575Z'
+    - restify > restify-errors > @netflix/nerror > lodash:
+        patched: '2020-06-09T18:06:21.575Z'
