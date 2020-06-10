@@ -23,7 +23,7 @@
     "npm": ">= 1.2.0"
   },
   "dependencies": {
-    "config-multipaas": "^0.1.0",
+    "config-multipaas": "^0.2.3",
     "restify": "^8.1.0",
     "mongojs": "*",
     "snyk": "^1.337.0"
